@@ -6,7 +6,7 @@ function Navebar() {
         {id:"1",src:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/create.png?raw=true"},
         {id:"2",src:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/more.png?raw=true"},
         {id:"3",src:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/bell.png?raw=true"},
-        {id:"4",src:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204-1.png?raw=true"},
+        {id:"4",src:"https://yt3.ggpht.com/ytc/AIdro_l54ENFgzNHh3l98sDBZeM-W4EUbacFBWEFOHKqJxWh-Wk=s68-c-k-c0x00ffffff-no-rj"},
       ];
     
       const categories = [
