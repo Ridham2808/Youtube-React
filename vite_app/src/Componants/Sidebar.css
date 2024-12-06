@@ -1,0 +1,60 @@
+.whole{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  
+  .sidebar{
+    width: 240px;
+    background-color: #212121;
+    color: #fff;
+    height: 100vh;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo-section{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .logo{
+    height: 25px;
+  }
+  
+  .menu-item{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  .menu-item:hover{
+    opacity: 50%;
+  }
+  
+  .icon,
+  .channel-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+  }
+  
+  .line{
+    width: 90%;
+    height: 1px;
+    background-color: #383838;
+    margin: 10px auto;
+  }
+  
+  .section-title{
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    color: #aaa;
+  }
