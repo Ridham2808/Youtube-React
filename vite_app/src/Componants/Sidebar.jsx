@@ -7,6 +7,9 @@ function Sidebar() {
         {id:2,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/explore.png?raw=true",text: "Explores"},
         {id:3,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/shorts.png?raw=true",text: "Shorts"},
         {id:4,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/subscription.png?raw=true",text: "Subscriptions"},
+      ];
+
+      const sidebar2=[
         {id:5,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/library.png?raw=true",text: "Library"},
         {id:6,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/history.png?raw=true",text: "History"},
         {id:7,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/your_video.png?raw=true",text: "Your videos"},
@@ -21,7 +24,12 @@ function Sidebar() {
         {id:13,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%201%20(2).png?raw=true",text: "MKBHD"},
         {id:14,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%201%20(3).png?raw=true",text: "Figma"},
         {id:15,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%201%20(4).png?raw=true",text: "ATC Android ToTo C..."},
+        {id:16,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(3).png?raw=true",text: "Saptarshi Prakash"},
+        {id:17,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(4).png?raw=true",text: "[Aj&s]Smar"},
+        {id:18,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%204%20(6).png?raw=true",text: "Code With Harry"},
+        {id:19,image:"https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/Ellipse%201%20(6).png?raw=true",text: "Fitness"},
       ];
+
     return(
         <>
         <div className="whole">
@@ -35,6 +43,15 @@ function Sidebar() {
         </div>
 
         {sidebar.map((item) => (
+          <div className="menu-item" key={item.id}>
+            <img src={item.image} className="icon" />
+            <span>{item.text}</span>
+          </div>
+        ))}
+
+<hr className="line" />
+
+        {sidebar2.map((item) => (
           <div className="menu-item" key={item.id}>
             <img src={item.image} className="icon" />
             <span>{item.text}</span>
