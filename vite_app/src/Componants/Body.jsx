@@ -1,3 +1,5 @@
+// // // // // // // // // // // // // // // // // // // // // // // // // // Normal react code, and also get data from API
+
 // import { useState,useEffect } from 'react';
 // import '../Componants/Body.css';
 
@@ -205,7 +207,7 @@
 
 
 
-// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// // // // // // // // // // // // // // // // // // // // // // // // // Code which get data from Youtube (without search) 
 
 
 
@@ -243,7 +245,7 @@
 //     // YouTube API endpoint to search for videos
 //     const apiKey = 'AIzaSyDW-yQQX9so8xgi-kNtWoxLx2lJZ_V7R7o';
 //     const query = 'your search term here';  // Modify search term as needed
-//     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${apiKey}&type=video`;
+//     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${apiKey}&type=video&maxResults=8`;
 
 //     // Fetch data from YouTube API
 //     fetch(url)
@@ -318,8 +320,7 @@
 // export default Body;
 
 
-
-// ////////////////////////////////////////////////////////////////////
+// // // // // // // // // // // // // // // // // // // // // // Code Which get data from youtube and also Search Any video
 
 
 
@@ -358,7 +359,7 @@
 //   }, []);
 
 //   const fetchVideos = (query) => {
-//     const apiKey = 'AIzaSyAEi1p6BljqF6pbEwnh6ms0wh11kvTkWb8';
+//     const apiKey = 'AIzaSyDW-yQQX9so8xgi-kNtWoxLx2lJZ_V7R7o';
 //     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&10q=${query}&key=${apiKey}&type=video&maxResults=8`;
 
 //     fetch(url)
@@ -444,9 +445,7 @@
 
 
 
-
-
-
+// // // // // // // // // // // // // // // // Code Which get data from youtube and also Search Any video and play any video
 
 
 
@@ -486,7 +485,7 @@ function Body() {
   }, []);
 
   const fetchVideos = (query) => {
-    const apiKey = 'AIzaSyAEi1p6BljqF6pbEwnh6ms0wh11kvTkWb8';
+    const apiKey = 'AIzaSyDW-yQQX9so8xgi-kNtWoxLx2lJZ_V7R7o';
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${apiKey}&type=video&maxResults=8`;
 
     fetch(url)
