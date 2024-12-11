@@ -449,6 +449,150 @@
 
 
 
+// import { useState, useEffect } from 'react';
+// import '../Componants/Body.css';
+
+// function Body() {
+//   const iconsData = [
+//     { id: "1", src: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/create.png?raw=true" },
+//     { id: "2", src: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/more.png?raw=true" },
+//     { id: "3", src: "https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/bell.png?raw=true" },
+//     { id: "4", src: "https://yt3.ggpht.com/ytc/AIdro_l54ENFgzNHh3l98sDBZeM-W4EUbacFBWEFOHKqJxWh-Wk=s68-c-k-c0x00ffffff-no-rj" },
+//   ];
+
+//   const categories = [
+//     { id: 1, name: "All" },
+//     { id: 2, name: "Cook Studio" },
+//     { id: 3, name: "UX" },
+//     { id: 4, name: "Case Study" },
+//     { id: 5, name: "Music" },
+//     { id: 6, name: "Bnagla Lofi" },
+//     { id: 7, name: "Tour" },
+//     { id: 8, name: "Saintmartin" },
+//     { id: 9, name: "Tech" },
+//     { id: 10, name: "iPhone 13" },
+//     { id: 11, name: "User Interface Design" },
+//     { id: 12, name: "Computer Design" },
+//   ];
+
+//   const [video, setVideo] = useState([]);
+//   const [searchQuery, setSearchQuery] = useState("");
+//   const [selectedVideo, setSelectedVideo] = useState(null);
+
+//   useEffect(() => {
+//     // Fetch default random videos
+//     fetchVideos("random videos");
+//   }, []);
+
+//   const fetchVideos = (query) => {
+//     const apiKey = 'AIzaSyDW-yQQX9so8xgi-kNtWoxLx2lJZ_V7R7o';
+//     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${apiKey}&type=video&maxResults=8`;
+
+//     fetch(url)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         const videoData = data.items.map((item) => ({
+//           id: item.id.videoId,
+//           title: item.snippet.title,
+//           channel: item.snippet.channelTitle,
+//           thumbnail: item.snippet.thumbnails.high.url,
+//         }));
+//         setVideo(videoData);
+//       })
+//       .catch((error) => console.error('Error fetching data:', error));
+//   };
+
+//   const handleSearch = (e) => {
+//     if (e.key === 'Enter' && searchQuery.trim() !== "") {
+//       fetchVideos(searchQuery);
+//     }
+//   };
+
+//   const handleRemoveVideo = () => {
+//     setSelectedVideo(null);
+//   };
+
+//   return (
+//     <>
+//       <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/search.png?raw=true" alt="" className='oneimage' />
+//       <img src="https://github.com/PatelNeelMahesh/frontend_tasks/blob/main/02.youtube-clone/assets/mic.png?raw=true" alt="" className='secondimage' />
+
+//       <div className="top-bar">
+//         <div className="search-bar">
+//           <input 
+//             type="text" 
+//             placeholder="Search" 
+//             className="search-input" 
+//             value={searchQuery} 
+//             onChange={(e) => setSearchQuery(e.target.value)} 
+//             onKeyDown={handleSearch} 
+//           />
+//         </div>
+//         <div className="icon-section">
+//           {iconsData.map((icon) => (
+//             <img key={icon.id} id={icon.id} src={icon.src} className="icon" />
+//           ))}
+//         </div>
+//       </div>
+
+//       <hr className="line2" />
+
+//       <div className="category-bar">
+//         {categories.map((category) => (
+//           <div key={category.id} className="category-item">
+//             <button className="category-button">{category.name}</button>
+//           </div>
+//         ))}
+//       </div>
+
+//       <hr className="line2" />
+
+//       {selectedVideo ? (
+//         <div className="video-player">
+//           <iframe
+//             src={`https://www.youtube.com/embed/${selectedVideo}`}
+//             title="YouTube video player"
+//             frameBorder="0"
+//             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//             allowFullScreen
+//             className="video-frame-main"
+//           ></iframe>
+//           <button className="remove-button" onClick={handleRemoveVideo}>Remove</button>
+//         </div>
+//       ) : (
+//         <div className="video-grid">
+//           {video.map((videoItem) => (
+//             <div key={videoItem.id} className="video-card" onClick={() => setSelectedVideo(videoItem.id)}>
+//               <img 
+//                 src={videoItem.thumbnail} 
+//                 alt="Thumbnail" 
+//                 className="thumbnail" 
+//               />
+//               <div className="video-info">
+//                 <img src="default-logo.png" alt="Channel Logo2" className="logo2" />
+//                 <div className="text-info">
+//                   <h3 className="video-title">{videoItem.title}</h3>
+//                   <p className="channel-name">{videoItem.channel}</p>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       )}
+//     </>
+//   );
+// }
+
+// export default Body;
+
+
+
+
+// // // // // Code Which get data from youtube and also Search Any video and play any video and also upper side button click
+
+
+
+
 import { useState, useEffect } from 'react';
 import '../Componants/Body.css';
 
@@ -478,11 +622,12 @@ function Body() {
   const [video, setVideo] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("random videos");
 
   useEffect(() => {
-    // Fetch default random videos
-    fetchVideos("random videos");
-  }, []);
+    // Fetch videos based on the active category
+    fetchVideos(activeCategory);
+  }, [activeCategory]);
 
   const fetchVideos = (query) => {
     const apiKey = 'AIzaSyDW-yQQX9so8xgi-kNtWoxLx2lJZ_V7R7o';
@@ -510,6 +655,10 @@ function Body() {
 
   const handleRemoveVideo = () => {
     setSelectedVideo(null);
+  };
+
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
   };
 
   return (
@@ -540,7 +689,9 @@ function Body() {
       <div className="category-bar">
         {categories.map((category) => (
           <div key={category.id} className="category-item">
-            <button className="category-button">{category.name}</button>
+            <button className="category-button" onClick={() => handleCategoryClick(category.name)}>
+              {category.name}
+            </button>
           </div>
         ))}
       </div>
