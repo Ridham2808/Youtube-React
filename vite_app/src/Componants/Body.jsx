@@ -442,6 +442,14 @@
 
 // export default Body;
 
+
+
+
+
+
+
+
+
 import { useState, useEffect } from 'react';
 import '../Componants/Body.css';
 
@@ -501,11 +509,7 @@ function Body() {
     }
   };
 
-  const handleThumbnailClick = (videoId) => {
-    setSelectedVideo(videoId);
-  };
-
-  const handleClosePopup = () => {
+  const handleRemoveVideo = () => {
     setSelectedVideo(null);
   };
 
@@ -543,39 +547,37 @@ function Body() {
       </div>
 
       <hr className="line2" />
-      <div className="video-grid">
-        {video.map((videoItem) => (
-          <div key={videoItem.id} className="video-card">
-            <img 
-              src={videoItem.thumbnail} 
-              alt="Thumbnail" 
-              className="thumbnail" 
-              onClick={() => handleThumbnailClick(videoItem.id)}
-            />
-            <div className="video-info">
-              <img src="default-logo.png" alt="Channel Logo2" className="logo2" />
-              <div className="text-info">
-                <h3 className="video-title">{videoItem.title}</h3>
-                <p className="channel-name">{videoItem.channel}</p>
+
+      {selectedVideo ? (
+        <div className="video-player">
+          <iframe
+            src={`https://www.youtube.com/embed/${selectedVideo}`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="video-frame-main"
+          ></iframe>
+          <button className="remove-button" onClick={handleRemoveVideo}>Remove</button>
+        </div>
+      ) : (
+        <div className="video-grid">
+          {video.map((videoItem) => (
+            <div key={videoItem.id} className="video-card" onClick={() => setSelectedVideo(videoItem.id)}>
+              <img 
+                src={videoItem.thumbnail} 
+                alt="Thumbnail" 
+                className="thumbnail" 
+              />
+              <div className="video-info">
+                <img src="default-logo.png" alt="Channel Logo2" className="logo2" />
+                <div className="text-info">
+                  <h3 className="video-title">{videoItem.title}</h3>
+                  <p className="channel-name">{videoItem.channel}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {selectedVideo && (
-        <div className="video-popup">
-          <div className="popup-content">
-            <button className="close-button" onClick={handleClosePopup}>close</button>
-            <iframe
-              src={`https://www.youtube.com/embed/${selectedVideo}`}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="video-frame"
-            ></iframe>
-          </div>
+          ))}
         </div>
       )}
     </>

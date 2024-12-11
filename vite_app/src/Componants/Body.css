@@ -155,3 +155,28 @@ opacity: 50%;
     font-size: 12px;
     color: #aaa;
   }
+  
+
+
+
+
+  .video-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 200px;
+  }
+  
+  .video-frame-main {
+    width: 80%;
+    height: 500px;
+    border: none;
+  }
+  
+
+  .remove-button{
+    margin-top: -500px;
+    background-color: rgb(232, 125, 125);
+    color: rgb(6, 6, 6);
+  }
