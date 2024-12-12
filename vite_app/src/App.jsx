@@ -1,15 +1,17 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
+import Sidebar from './Componants/Sidebar';
+import Body from './Componants/Body';
 import './App.css'
-import Sidebar from './Componants/Sidebar.jsx'
-import Body from './Componants/Body.jsx'
 
 function App() {
+  const [videoCategory, setVideoCategory] = useState("random videos");
+
   return (
-    <>
-      <Sidebar />
-      <Body />
-    </>
-  )
+    <div className="app">
+      <Sidebar setVideoCategory={setVideoCategory} />
+      <Body videoCategory={videoCategory} />
+    </div>
+  );
 }
 
-export default App
+export default App;
