@@ -177,6 +177,8 @@ opacity: 50%;
 
   .remove-button{
     margin-top: -500px;
-    background-color: rgb(232, 125, 125);
-    color: rgb(6, 6, 6);
+    background-color: red;
+    color:white;
+    height: 30px;
+    width: 110px;
   }

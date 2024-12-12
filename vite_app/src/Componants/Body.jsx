@@ -703,12 +703,11 @@ function Body() {
           <iframe
             src={`https://www.youtube.com/embed/${selectedVideo}`}
             title="YouTube video player"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="video-frame-main"
           ></iframe>
-          <button className="remove-button" onClick={handleRemoveVideo}>Remove</button>
+          <button className="remove-button" onClick={handleRemoveVideo}>Remove Player</button>
         </div>
       ) : (
         <div className="video-grid">
